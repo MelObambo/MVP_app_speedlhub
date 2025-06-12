@@ -1,13 +1,32 @@
 <resources>
     <string name="app_name">My Application</string>
+
+    <string name="signin">Sign in!</string>
+    <string name="signin_title">Send your package online</string>
+    <string name="signin_message">Your package partner</string>
+    <string name="signin_link">You don\'t have your account yet? Sign in?</string>
+
+    <string name="french_flag_description">French flag</string>
+
+    <string name="login_input">Phone number or address</string>
+    <string name="login_hint">Enter your email of your address</string>
+    <string name="password_input">Password</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="login">Log in</string>
+
+    <string name="forgotten_password">Forgotten password\?</string>
+    <string name="no_account">You don\'t have your account yet\?&#160;</string>
+
+    <string name="copyright">© 2024-2025 ...</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_address">My addresses</string>
+    <string name="menu_history">Shipment history</string>
+    <string name="menu_invoice">Invoices</string>
+
+
+    <string name="action_settings">Settings</string>
 </resources>
