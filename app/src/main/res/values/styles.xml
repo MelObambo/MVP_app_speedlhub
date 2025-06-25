@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- edit text -->
+    <style name="editTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:background">@drawable/bg_edit_text_border</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="subtitleTextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textSize_400</item>
+        <item name="android:textColor">@color/grey_400</item>
+        <item name="android:background">@drawable/bg_dashed_line</item>
+        <item name="android:layout_marginBottom">25dp</item>
+    </style>
+
+
+    <!-- table row text view-->
+    <style name="tableRowTextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:paddingEnd">5dp</item>
+        <item name="android:background">@drawable/bg_address_table_column</item>
+    </style>
+
+
+    <!-- tracking text view -->
+    <style name="trackingNumberTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textSize_700</item>
+        <item name="android:textColor">@color/blue_300</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">35dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+    </style>
+    <style name="trackingInfoPeriodTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/blue_300</item>
+        <item name="android:textSize">@dimen/textSize_300</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="trackingInfoTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textSize_300</item>
+    </style>
+
+
+    <!-- dashboard search -->
+    <style name="buttonBarDashboardSearchStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FF3577F1</item>
+        <item name="android:backgroundTint">#FFEAF1FE</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="buttonBarDashboardSearchStyle.Minus" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/blue_400</item>
+        <item name="android:backgroundTint">@color/grey_200</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="textViewDashboardSearchStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:text">@string/dashboard_info_text</item>
+    </style>
+
+
+    <!-- table row -->
+    <style name="tableRowStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:background">@drawable/bg_address_table_row</item>
+    </style>
+
+
+    <!-- Spinner -->
+    <style name="spinnerStyle.Theme" parent="@android:style/Theme.Light">
+        <item name="android:spinnerStyle">@style/spinnerStyle</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItem</item>
+        <item name="android:background">@drawable/bg_spinner</item>
+    </style>
+    <style name="spinnerStyle">
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="SpinnerItem">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/white</item>
+    </style>
+    <style name="SpinnerDropDownItem">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/white</item>
+    </style>
+</resources>

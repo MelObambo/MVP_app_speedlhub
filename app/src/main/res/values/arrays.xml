@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="transportation">
+        <item>DPD</item>
+        <item>GEODIS</item>
+    </string-array>
+    <string-array name="country">
+        <item>Andorra</item>
+        <item>Belgium</item>
+        <item>Croatia</item>
+        <item>Denmark</item>
+        <item>Estonia</item>
+    </string-array>
+    <string-array name="status">
+        <item>Missing information</item>
+        <item>Recipient contacted</item>
+        <item>Shipment prepared</item>
+    </string-array>
+    <string-array name="type">
+        <item>Single package</item>
+        <item>Multi package</item>
+        <item>\> 30kg</item>
+    </string-array>
+</resources>

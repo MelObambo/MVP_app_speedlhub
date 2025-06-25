@@ -1,10 +1,46 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name" translatable="false">SpeedleHub</string>
 
-    <string name="signin">Sign in!</string>
-    <string name="signin_title">Send your package online</string>
-    <string name="signin_message">Your package partner</string>
-    <string name="signin_link">You don\'t have your account yet? Sign in?</string>
+    <!-- menu -->
+    <string name="menu_sign_in">Sign in</string>
+    <string name="menu_sign_up">Sign up</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_address">My addresses</string>
+    <string name="menu_tracking">Package tracking</string>
+    <string name="menu_history">Shipment history</string>
+    <string name="menu_invoice">Invoices</string>
+
+    <string name="action_hamburger">More</string>
+    <string name="action_search">Search</string>
+    <string name="action_notification">Notification</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_language">Language</string>
+        <string name="action_chinese">Chinese (Mandarin)</string>
+        <string name="action_english">English</string>
+        <string name="action_french">French</string>
+    <string name="action_profile">Profile</string>
+    <string name="action_sign_out">Sign out</string>
+
+    <!-- sign in / sign up -->
+    <string name="sign_in">Sign in!</string>
+    <string name="sign_in_title">Send your packages online</string>
+    <string name="sign_in_message">Your package partner</string>
+
+    <string name="sign_up_title">Sign up</string>
+    <string name="sign_in_link">Sign in!</string>
+    <string name="sign_up_link_text">Do you already have an account\?&#160;</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="sign_up_surname_hint">Enter your surname *</string>
+    <string name="sign_up_firstname_hint">Enter your firstname *</string>
+    <string name="sign_up_phone_hint">Enter your phone number *</string>
+    <string name="sign_up_email_hint">Enter your email address *</string>
+    <string name="sign_up_password_hint">Enter your password</string>
+    <string name="terms">By signing up I agree to the&#160;</string>
+    <string name="terms_link">Terms and Conditions&#160;</string>
+    <string name="terms_end">of&#160;</string>
+
+    <string name="link_to_web_error">Redirection failed</string>
 
     <string name="french_flag_description">French flag</string>
 
@@ -12,21 +48,85 @@
     <string name="login_hint">Enter your email of your address</string>
     <string name="password_input">Password</string>
     <string name="password_hint">Enter your password</string>
-    <string name="login">Log in</string>
-
     <string name="forgotten_password">Forgotten password\?</string>
     <string name="no_account">You don\'t have your account yet\?&#160;</string>
 
-    <string name="copyright">© 2024-2025 ...</string>
+    <string name="copyright">© 2024-2025 &#8211;</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="menu_dashboard">Dashboard</string>
-    <string name="menu_address">My addresses</string>
-    <string name="menu_history">Shipment history</string>
-    <string name="menu_invoice">Invoices</string>
+    <!-- dashboard -->
+    <string name="dashboard_day">Day</string>
+    <string name="dashboard_month">Month</string>
+    <string name="dashboard_year">Year</string>
+    <string name="dashboard_day_one">Day-1</string>
+    <string name="dashboard_month_one">Month-1</string>
+    <string name="dashboard_year_one">Year-1</string>
+    <string name="dashboard_search_time_date_edittext">dd/mm/yy</string>
+    <string name="search_time_button_description">Pick a date</string>
+    <string name="dashboard_search_button_text">Start search</string>
 
+    <string name="dashboard_delivered_info_label">TOTAL DELIVERED</string>
+    <string name="dashboard_pending_info_label">PENDING DELIVERIES</string>
+    <string name="dashboard_customer_info_label">NUMBER OF DELIVERED CUSTOMERS</string>
+    <string name="dashboard_delay_info_label">DELIVERY AVERAGE DELAY</string>
+    <string name="dashboard_weight_info_label">PACKAGE AVERAGE WEIGHT</string>
+    <string name="dashboard_deadline_info_label">MEETING DEADLINES</string>
+    <string name="dashboard_cost_info_label">DELIVERY AVERAGE COST</string>
+    <string name="dashboard_invoicing_info_label">INVOICING OF THE PERIOD</string>
+    <string name="dashboard_pending_invoicing_info_label">PENDING INVOICING</string>
+    <string name="dashboard_info_text">NN Packages</string>
 
-    <string name="action_settings">Settings</string>
+    <!-- address-->
+    <string name="address_header">Address book list</string>
+
+    <string name="address_filter">Filter</string>
+    <string name="address_period">Select the period</string>
+
+    <string name="address_type">Type</string>
+    <string name="address_corporate_name">Corporate name</string>
+    <string name="address_name">Name Surname</string>
+    <string name="address_email">Email</string>
+    <string name="address_phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="page" translatable="false">1</string>
+
+    <string name="previous_page">Previous</string>
+    <string name="next_page">Next</string>
+
+    <!-- tracking -->
+    <string name="tracking_title">Tracking</string>
+    <string name="tracking_info_all">Every package</string>
+    <string name="tracking_info_day">Today</string>
+    <string name="tracking_info_week">This week</string>
+    <string name="tracking_info_month">This month</string>
+    <string name="tracking_info_text">Number of packages</string>
+    <string name="tracking_subtitle">Track a package</string>
+    <string name="tracking_hint_date_primary">Start date</string>
+    <string name="tracking_hint_date_secondary">End date</string>
+    <string name="tracking_hint_order_number">Order number</string>
+    <string name="tracking_hint_tracking_number">Tracking number</string>
+    <string name="tracking_hint_name">Destination Name/Company</string>
+    <string name="tracking_hint_transportation">Transportation mode</string>
+    <string name="tracking_hint_country">Select a country</string>
+    <string name="tracking_hint_status">Status</string>
+    <string name="tracking_hint_ref">Reference</string>
+    <string name="tracking_hint_type">Package type</string>
+    <string name="tracking_button_text">Print label</string>
+    <string name="tracking_date">Creation date</string>
+    <string name="tracking_number_of_packages">Number of packages</string>
+    <string name="tracking_package_number">Package number</string>
+    <string name="tracking_recipient">Recipient</string>
+    <string name="tracking_loader">Loader</string>
+    <string name="tracking_weight">Weight (kg)</string>
+    <string name="tracking_price">Price (€)</string>
+    <string name="tracking_status">Status</string>
+    <string name="tracking_writer">Written by</string>
+    
+    <!-- language -->
+    <string name="andorra">Andorra</string>
+    <string name="belgium">Belgium</string>
+    <string name="croatia">Croatia</string>
+    <string name="denmark">Denmark</string>
 </resources>

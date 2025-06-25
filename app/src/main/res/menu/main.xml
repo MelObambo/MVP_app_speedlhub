@@ -2,8 +2,64 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_search"
+        android:orderInCategory="101"
+        android:icon="@drawable/ic_menu_search"
+        android:title="@string/action_search"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_notification"
+        android:orderInCategory="104"
+        android:icon="@drawable/ic_notification"
+        android:title="@string/action_notification"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="109"
+        android:icon="@drawable/ic_settings"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        app:showAsAction="always" >
+        <menu>
+            <item
+                android:id="@+id/action_language"
+                android:orderInCategory="201"
+                android:icon="@drawable/ic_language"
+                android:title="@string/action_language"
+                app:showAsAction="never" >
+                <menu>
+                    <item
+                        android:id="@+id/action_chinese"
+                        android:orderInCategory="211"
+                        android:icon="@drawable/ic_flag_chinese"
+                        android:title="@string/action_chinese"
+                        app:showAsAction="never" />
+                    <item
+                        android:id="@+id/action_english"
+                        android:orderInCategory="212"
+                        android:icon="@drawable/ic_flag_uk"
+                        android:title="@string/action_english"
+                        app:showAsAction="never" />
+                    <item
+                        android:id="@+id/action_french"
+                        android:orderInCategory="213"
+                        android:icon="@drawable/ic_french_flag"
+                        android:title="@string/action_french"
+                        app:showAsAction="never" />
+                </menu>
+            </item>
+            <item
+                android:id="@+id/action_profile"
+                android:orderInCategory="202"
+                android:icon="@drawable/ic_profile"
+                android:title="@string/action_profile"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/action_sign_out"
+                android:orderInCategory="203"
+                android:icon="@drawable/ic_sign_out"
+                android:title="@string/action_sign_out"
+                app:showAsAction="never" />
+        </menu>
+    </item>
 </menu>

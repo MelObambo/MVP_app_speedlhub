@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_100"
+    android:paddingHorizontal="@dimen/activity_horizontal_padding"
+    android:paddingTop="30dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_db_card"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="15dp"
+                android:paddingVertical="10dp">
+                <TextView android:id="@+id/tracking_total_number"
+                    android:text="35"
+                    style="@style/trackingNumberTextView" />
+                <TextView android:id="@+id/tracking_info_all"
+                    android:text="@string/tracking_info_all"
+                    android:layout_toEndOf="@id/tracking_total_number"
+                    style="@style/trackingInfoPeriodTextView" />
+                <TextView
+                    android:text="@string/tracking_info_text"
+                    android:layout_toEndOf="@id/tracking_total_number"
+                    android:layout_below="@id/tracking_info_all"
+                    style="@style/trackingInfoTextView"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_db_card"
+                android:paddingVertical="10dp">
+                <TextView android:id="@+id/tracking_day_number"
+                    android:text="0"
+                    style="@style/trackingNumberTextView"/>
+                <TextView android:id="@+id/tracking_info_day"
+                    android:text="@string/tracking_info_day"
+                    android:layout_toEndOf="@id/tracking_day_number"
+                    style="@style/trackingInfoPeriodTextView" />
+                <TextView
+                    android:text="@string/tracking_info_text"
+                    android:layout_toEndOf="@id/tracking_day_number"
+                    android:layout_below="@id/tracking_info_day"
+                    style="@style/trackingInfoTextView"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_db_card"
+                android:layout_marginVertical="@dimen/activity_vertical_margin"
+                android:paddingVertical="10dp">
+                <TextView android:id="@+id/tracking_week_number"
+                    android:text="20"
+                    style="@style/trackingNumberTextView" />
+                <TextView android:id="@+id/tracking_info_week"
+                    android:text="@string/tracking_info_week"
+                    android:layout_toEndOf="@id/tracking_week_number"
+                    style="@style/trackingInfoPeriodTextView" />
+                <TextView
+                    android:text="@string/tracking_info_text"
+                    android:layout_toEndOf="@id/tracking_week_number"
+                    android:layout_below="@id/tracking_info_week"
+                    style="@style/trackingInfoTextView"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_db_card"
+                android:paddingVertical="10dp">
+                <TextView android:id="@+id/tracking_month_number"
+                    android:text="20"
+                    style="@style/trackingNumberTextView" />
+                <TextView android:id="@+id/tracking_info_month"
+                    android:text="@string/tracking_info_month"
+                    android:layout_toEndOf="@id/tracking_month_number"
+                    style="@style/trackingInfoPeriodTextView" />
+                <TextView
+                    android:text="@string/tracking_info_text"
+                    android:layout_toEndOf="@id/tracking_month_number"
+                    android:layout_below="@id/tracking_info_month"
+                    style="@style/trackingInfoTextView"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:layout_marginTop="@dimen/activity_vertical_padding"
+                android:layout_marginVertical="@dimen/card_vertical_margin"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="@dimen/activity_horizontal_padding"
+                android:orientation="vertical">
+                <TextView
+                    android:text="@string/tracking_subtitle"
+                    android:textSize="@dimen/textSize_400"
+                    android:layout_marginBottom="25dp"
+                    style="@style/subtitleTextViewStyle"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/trackingFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:iconGravity="textStart"
+                    app:icon="@drawable/ic_filter"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/address_filter"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textSize_300"/>
+                <LinearLayout android:id="@+id/parent_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="@dimen/activity_horizontal_padding"
+                android:orientation="vertical">
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:background="@drawable/bg_address_table">
+                    <TableRow style="@style/tableRowStyle">
+                        <TextView
+                            style="@style/tableRowTextViewStyle"
+                            android:layout_weight=".53"
+                            android:text="@string/tracking_date"/>
+                        <TextView android:id="@+id/creation_date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".3"
+                            android:textStyle="bold"
+                            android:text="10.06.2025"
+                            android:paddingStart="5dp"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".3"
+                            android:text="10:38"
+                            android:textSize="@dimen/textSize_100"
+                            android:paddingStart="5dp"/>
+                    </TableRow>
+                    <TableRow style="@style/tableRowStyle">
+                        <TextView
+                            style="@style/tableRowTextViewStyle"
+                            android:layout_weight=".8"
+                            android:text="@string/tracking_number_of_packages"/>
+                        <TextView android:id="@+id/number_of_packages"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".9"
+                            android:textStyle="bold"
+                            android:text="1"
+                            android:paddingStart="5dp"/>
+                    </TableRow>
+                    <TableRow style="@style/tableRowStyle">
+                        <TextView
+                            android:layout_weight=".8"
+                            android:text="@string/tracking_package_number"
+                            style="@style/tableRowTextViewStyle"/>
+                        <TextView android:id="@+id/package_number"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".9"
+                            android:textStyle="bold"
+                            android:text="REF-001"
+                            android:paddingStart="5dp"/>
+                    </TableRow>
+                    <TableRow style="@style/tableRowStyle">
+                        <TextView
+                            style="@style/tableRowTextViewStyle"
+                            android:layout_weight=".8"
+                            android:text="@string/tracking_recipient"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".9"
+                            android:textStyle="bold"
+                            android:text="GABRIELO FRANCKY"
+                            android:paddingStart="5dp"/>
+                    </TableRow>
+                    <TableRow style="@style/tableRowStyle">
+                        <TextView
+                            style="@style/tableRowTextViewStyle"
+                            android:layout_weight=".8"
+                            android:text="@string/tracking_loader"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".9"
+                            android:textStyle="bold"
+                            android:text="DPD"
+                            android:paddingStart="5dp"/>
+                    </TableRow>
+                    <TableRow style="@style/tableRowStyle">
+                        <TextView
+                            style="@style/tableRowTextViewStyle"
+                            android:layout_weight=".8"
+                            android:text="@string/tracking_weight"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".9"
+                            android:textStyle="bold"
+                            android:text="3,5 kg"
+                            android:paddingStart="5dp"/>
+                    </TableRow>
+                    <TableRow style="@style/tableRowStyle">
+                        <TextView
+                            style="@style/tableRowTextViewStyle"
+                            android:layout_weight=".8"
+                            android:text="@string/tracking_price"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".9"
+                            android:textStyle="bold"
+                            android:text="7,75 €"
+                            android:paddingStart="5dp"/>
+                    </TableRow>
+                    <TableRow style="@style/tableRowStyle">
+                        <TextView
+                            style="@style/tableRowTextViewStyle"
+                            android:layout_weight=".8"
+                            android:text="@string/tracking_status"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".9"
+                            android:textStyle="bold"
+                            android:text="RECIPIENT CONTACTED"
+                            android:paddingStart="5dp"/>
+                    </TableRow>
+                    <TableRow style="@style/tableRowStyle">
+                        <TextView
+                            style="@style/tableRowTextViewStyle"
+                            android:layout_weight=".8"
+                            android:text="@string/tracking_writer"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".9"
+                            android:textStyle="bold"
+                            android:text="Demonstration France"
+                            android:paddingStart="5dp"/>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

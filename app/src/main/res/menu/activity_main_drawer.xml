@@ -9,17 +9,20 @@
             android:title="@string/menu_dashboard"
             android:icon="@drawable/ic_menu_dashboard" />
         <item
-            android:id="@+id/menu_gallery"
+            android:id="@+id/menu_address"
             android:title="@string/menu_address"
             android:icon="@drawable/ic_menu_address" />
         <item
+            android:id="@+id/menu_tracking"
+            android:title="@string/menu_tracking"
+            android:icon="@drawable/ic_menu_tracking" />
+        <item
             android:id="@+id/menu_history"
             android:title="@string/menu_history"
-            android:icon="@drawable/ic_menu_history">
-        </item>
+            android:icon="@drawable/ic_menu_history" />
         <item
             android:id="@+id/menu_invoice"
             android:title="@string/menu_invoice"
-            android:icon="@drawable/ic_menu_invoices"
+            android:icon="@drawable/ic_menu_invoices" />
     </group>
 </menu>
