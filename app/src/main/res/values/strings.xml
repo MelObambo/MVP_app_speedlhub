@@ -1,10 +1,30 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name" translatable="false">SpeedleHub</string>
 
-    <string name="signin">Sign in!</string>
-    <string name="signin_title">Send your package online</string>
-    <string name="signin_message">Your package partner</string>
-    <string name="signin_link">You don\'t have your account yet? Sign in?</string>
+    <!-- menu -->
+    <string name="menu_sign_in">Sign in</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_address">My addresses</string>
+    <string name="menu_history">Shipment history</string>
+    <string name="menu_invoice">Invoices</string>
+
+    <string name="action_hamburger">More</string>
+    <string name="action_search">Search</string>
+    <string name="action_notification">Notification</string>
+    <string name="action_language">Language</string>
+        <string name="action_chinese">Chinese</string>
+        <string name="action_english">English</string>
+        <string name="action_french">French</string>
+    <string name="action_profile">Profile</string>
+    <string name="action_sign_out">Sign out</string>
+
+    <!-- sign in / sign up -->
+    <string name="sign_in">Sign in!</string>
+    <string name="sign_in_title">Send your packages online</string>
+    <string name="sign_in_message">Your package partner</string>
+    <string name="sign_in_link">You don\'t have your account yet? Sign in?</string>
+
+    <string name="sign_up">Sign up!</string>
 
     <string name="french_flag_description">French flag</string>
 
@@ -17,16 +37,34 @@
     <string name="forgotten_password">Forgotten password\?</string>
     <string name="no_account">You don\'t have your account yet\?&#160;</string>
 
-    <string name="copyright">© 2024-2025 ...</string>
+    <string name="copyright">© 2024-2025 &#8211;</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="menu_dashboard">Dashboard</string>
-    <string name="menu_address">My addresses</string>
-    <string name="menu_history">Shipment history</string>
-    <string name="menu_invoice">Invoices</string>
+    <!-- dashboard -->
+    <string name="dashboard_day">Day</string>
+    <string name="dashboard_month">Month</string>
+    <string name="dashboard_year">Year</string>
+    <string name="dashboard_day_one">Day-1</string>
+    <string name="dashboard_month_one">Month-1</string>
+    <string name="dashboard_year_one">Year-1</string>
+    <string name="dashboard_search_time_date_edittext">dd/mm/yy</string>
+    <string name="search_time_button_description">Pick a date</string>
+    <string name="dashboard_search_button_text">Start search</string>
 
+    <string name="dashboard_delivered_info_label">TOTAL DELIVERED</string>
+    <string name="dashboard_pending_info_label">PENDING DELIVERIES</string>
+    <string name="dashboard_customer_info_label">NUMBER OF DELIVERED CUSTOMERS</string>
+    <string name="dashboard_delay_info_label">DELIVERY AVERAGE DELAY</string>
+    <string name="dashboard_weight_info_label">SHIPMENT AVERAGE WEIGHT</string>
+    <string name="dashboard_deadline_info_label">MEETING DEADLINES</string>
+    <string name="dashboard_cost_info_label">DELIVERY AVERAGE COST</string>
+    <string name="dashboard_invoicing_info_label">INVOICING OF THE PERIOD</string>
+    <string name="dashboard_pending_invoicing_info_label">PENDING INVOICING</string>
+    <string name="dashboard_info_text">NN Shipments</string>
 
-    <string name="action_settings">Settings</string>
+    <!-- address-->
+    <string name="address_header">Address book list</string>
+
 </resources>

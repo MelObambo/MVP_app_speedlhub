@@ -3,23 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/sign_in">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.myapplication.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/sign_in"
+        android:name="com.example.myapplication.ui.sign.SignInFragment"
+        android:label="@string/menu_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.example.myapplication.ui.dashboard.DashboardFragment"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.myapplication.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_address"
+        android:name="com.example.myapplication.ui.address.AddressFragment"
+        android:label="@string/menu_address"
+        tools:layout="@layout/fragment_address" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.myapplication.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_history"
+        android:name="com.example.myapplication.ui.sign.HistoryFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/nav_invoice"
+        android:name="com.example.myapplication.ui.sign.InvoiceFragment"
+        android:label="@string/menu_invoice"
+        tools:layout="@layout/fragment_invoice" />
 </navigation>

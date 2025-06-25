@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_100"
+    tools:context=".ui.dashboard.DashboardFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/activity_horizontal_padding"
+            android:paddingVertical="@dimen/activity_vertical_padding"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_horizontal_padding"
+                android:background="@drawable/bc_card"
+                android:layout_marginBottom="48dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/dashboard_search_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp"
+                    style="?android:attr/buttonBarStyle">
+
+                    <Button android:id="@+id/dashboard_search_time_day"
+                        android:layout_width="wrap_content"
+                        android:text="@string/dashboard_day"
+                        style="@style/buttonDashboardBarStyle"/>
+
+                    <Button android:id="@+id/dashboard_search_time_month"
+                        android:layout_width="wrap_content"
+                        android:text="@string/dashboard_month"
+                        style="@style/buttonDashboardBarStyle"/>
+
+                    <Button android:id="@+id/dashboard_search_time_year"
+                        android:layout_width="wrap_content"
+                        android:text="@string/dashboard_year"
+                        style="@style/buttonDashboardBarStyle"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/dashboard_search_time_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="50dp"
+                    style="?android:attr/buttonBarStyle">
+
+                    <Button android:id="@+id/dashboard_search_time_day_one"
+                        android:layout_width="wrap_content"
+                        android:text="@string/dashboard_day_one"
+                        style="@style/buttonDashboardBarStyle.Minus"/>
+
+                    <Button android:id="@+id/dashboard_search_time_month_one"
+                        android:layout_width="wrap_content"
+                        android:text="@string/dashboard_month_one"
+                        style="@style/buttonDashboardBarStyle.Minus"/>
+
+                    <Button android:id="@+id/dashboard_search_time_year_one"
+                        android:layout_width="wrap_content"
+                        android:text="@string/dashboard_year_one"
+                        android:paddingHorizontal="0dp"
+                        style="@style/buttonDashboardBarStyle.Minus"/>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText android:id="@+id/dashboard_search_time_date_edittext"
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:inputType="date"
+                        android:paddingLeft="10dp"
+                        android:textSize="24sp"
+                        android:hint="@string/dashboard_search_time_date_edittext"
+                        android:background="@drawable/edittext_border" />
+
+                    <ImageButton android:id="@+id/dashboard_search_time_date_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/ic_calendar"
+                        android:layout_toEndOf="@+id/dashboard_search_time_date_edittext"
+                        android:contentDescription="@string/search_time_button_description"/>
+
+                </RelativeLayout>
+
+
+                <Button android:id="@+id/dashboard_search_time_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_search"
+                    android:text="@string/dashboard_search_button_text"
+                    android:backgroundTint="@color/teal"/>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/card_vertical_padding"
+                android:background="@drawable/bc_db_card"
+                android:layout_marginBottom="35dp">
+
+                <FrameLayout android:id="@+id/dashboard_delivered_info_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:foreground="@drawable/ic_baggage"
+                    android:layout_margin="25dp"/>
+
+                <TextView android:id="@+id/dashboard_delivered_info_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/dashboard_delivered_info_label"
+                    android:layout_toEndOf="@id/dashboard_delivered_info_icon" />
+
+                <TextView android:id="@+id/dashboard_delivered_textview"
+                    style="@style/textViewDashboardSearchStyle"
+                    android:layout_toEndOf="@id/dashboard_delivered_info_icon"
+                    android:layout_below="@+id/dashboard_delivered_info_label" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/card_vertical_padding"
+                android:background="@drawable/bc_db_card"
+                android:layout_marginBottom="35dp">
+
+                <FrameLayout android:id="@+id/dashboard_pending_info_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:foreground="@drawable/ic_baggage"
+                    android:layout_margin="25dp"/>
+
+                <TextView android:id="@+id/dashboard_pending_info_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/dashboard_pending_info_label"
+                    android:layout_toEndOf="@id/dashboard_pending_info_icon" />
+
+                <TextView android:id="@+id/dashboard_pending_textview"
+                    style="@style/textViewDashboardSearchStyle"
+                    android:layout_toEndOf="@id/dashboard_pending_info_icon"
+                    android:layout_below="@+id/dashboard_pending_info_label" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/card_vertical_padding"
+                android:background="@drawable/bc_db_card"
+                android:layout_marginBottom="35dp">
+
+                <FrameLayout android:id="@+id/dashboard_customer_info_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:foreground="@drawable/ic_baggage"
+                    android:layout_margin="25dp"/>
+
+                <TextView android:id="@+id/dashboard_customer_info_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/dashboard_customer_info_label"
+                    android:layout_toEndOf="@id/dashboard_customer_info_icon" />
+
+                <TextView android:id="@+id/dashboard_customer_textview"
+                    style="@style/textViewDashboardSearchStyle"
+                    android:layout_toEndOf="@id/dashboard_customer_info_icon"
+                    android:layout_below="@+id/dashboard_customer_info_label" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/card_vertical_padding"
+                android:background="@drawable/bc_db_card"
+                android:layout_marginBottom="35dp">
+
+                <FrameLayout android:id="@+id/dashboard_delay_info_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:foreground="@drawable/ic_baggage"
+                    android:layout_margin="25dp"/>
+
+                <TextView android:id="@+id/dashboard_delay_info_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/dashboard_delay_info_label"
+                    android:layout_toEndOf="@id/dashboard_delay_info_icon" />
+
+                <TextView android:id="@+id/dashboard_delay_textview"
+                    style="@style/textViewDashboardSearchStyle"
+                    android:layout_toEndOf="@id/dashboard_delay_info_icon"
+                    android:layout_below="@+id/dashboard_delay_info_label" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/card_vertical_padding"
+                android:background="@drawable/bc_db_card"
+                android:layout_marginBottom="35dp">
+
+                <FrameLayout android:id="@+id/dashboard_weight_info_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:foreground="@drawable/ic_baggage"
+                    android:layout_margin="25dp"/>
+
+                <TextView android:id="@+id/dashboard_weight_info_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/dashboard_weight_info_label"
+                    android:layout_toEndOf="@id/dashboard_weight_info_icon" />
+
+                <TextView android:id="@+id/dashboard_weight_textview"
+                    style="@style/textViewDashboardSearchStyle"
+                    android:layout_toEndOf="@id/dashboard_weight_info_icon"
+                    android:layout_below="@+id/dashboard_weight_info_label" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/card_vertical_padding"
+                android:background="@drawable/bc_db_card"
+                android:layout_marginBottom="35dp">
+
+                <FrameLayout android:id="@+id/dashboard_deadline_info_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:foreground="@drawable/ic_baggage"
+                    android:layout_margin="25dp"/>
+
+                <TextView android:id="@+id/dashboard_deadline_info_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/dashboard_deadline_info_label"
+                    android:layout_toEndOf="@id/dashboard_deadline_info_icon" />
+
+                <TextView android:id="@+id/dashboard_deadline_textview"
+                    style="@style/textViewDashboardSearchStyle"
+                    android:layout_toEndOf="@id/dashboard_deadline_info_icon"
+                    android:layout_below="@+id/dashboard_deadline_info_label" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/card_vertical_padding"
+                android:background="@drawable/bc_db_card"
+                android:layout_marginBottom="35dp">
+
+                <FrameLayout android:id="@+id/dashboard_cost_info_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:foreground="@drawable/ic_baggage"
+                    android:layout_margin="25dp"/>
+
+                <TextView android:id="@+id/dashboard_cost_info_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/dashboard_cost_info_label"
+                    android:layout_toEndOf="@id/dashboard_cost_info_icon" />
+
+                <TextView android:id="@+id/dashboard_cost_textview"
+                    style="@style/textViewDashboardSearchStyle"
+                    android:layout_toEndOf="@id/dashboard_cost_info_icon"
+                    android:layout_below="@+id/dashboard_cost_info_label" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/card_vertical_padding"
+                android:background="@drawable/bc_db_card"
+                android:layout_marginBottom="35dp">
+
+                <FrameLayout android:id="@+id/dashboard_invoicing_info_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:foreground="@drawable/ic_baggage"
+                    android:layout_margin="25dp"/>
+
+                <TextView android:id="@+id/dashboard_invoicing_info_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/dashboard_invoicing_info_label"
+                    android:layout_toEndOf="@id/dashboard_invoicing_info_icon" />
+
+                <TextView android:id="@+id/dashboard_invoicing_textview"
+                    style="@style/textViewDashboardSearchStyle"
+                    android:layout_toEndOf="@id/dashboard_invoicing_info_icon"
+                    android:layout_below="@+id/dashboard_invoicing_info_label" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/card_vertical_padding"
+                android:background="@drawable/bc_db_card"
+                android:layout_marginBottom="35dp">
+
+                <FrameLayout android:id="@+id/dashboard_pending_invoicing_info_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:foreground="@drawable/ic_baggage"
+                    android:layout_margin="25dp"/>
+
+                <TextView android:id="@+id/dashboard_pending_invoicing_info_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/dashboard_pending_invoicing_info_label"
+                    android:layout_toEndOf="@id/dashboard_pending_invoicing_info_icon" />
+
+                <TextView android:id="@+id/dashboard_pending_invoicing_textview"
+                    style="@style/textViewDashboardSearchStyle"
+                    android:layout_toEndOf="@id/dashboard_pending_invoicing_info_icon"
+                    android:layout_below="@+id/dashboard_pending_invoicing_info_label" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

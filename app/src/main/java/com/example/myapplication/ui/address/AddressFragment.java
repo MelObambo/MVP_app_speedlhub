@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.slideshow;
+package com.example.myapplication.ui.address;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.myapplication.databinding.FragmentSlideshowBinding;
+import com.example.myapplication.databinding.FragmentAddressBinding;
 
-public class SlideshowFragment extends Fragment {
+public class AddressFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentAddressBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        AddressViewModel addressViewModel =
+                new ViewModelProvider(this).get(AddressViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentAddressBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textAddress;
+        addressViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

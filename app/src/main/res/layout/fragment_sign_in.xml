@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background" >
+    android:background="@drawable/gradient_background"
+    tools:context=".ui.sign.SignInFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +25,7 @@
                     android:textAlignment="center"
                     android:gravity="center"
                     android:layout_marginBottom="25dp"
-                    android:text="@string/signin_message"
+                    android:text="@string/sign_in_message"
                     android:textSize="@dimen/textSize_400"
                     android:textColor="@color/grey_100" />
             </FrameLayout>
@@ -41,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="@string/signin_title"
+                    android:text="@string/sign_in_title"
                     android:textColor="@color/blue_500"
                     android:textSize="@dimen/textSize_400" />
 
@@ -49,9 +50,7 @@
                     android:layout_width="@dimen/flag_width"
                     android:layout_height="@dimen/flag_height"
                     android:layout_gravity="end"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/french_flag"
+                    android:background="@drawable/ic_french_flag"
                     android:contentDescription="@string/french_flag_description"
                     android:src="@android:color/transparent" />
 
@@ -64,7 +63,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/textSize_300" />
 
-                <EditText
+                <EditText android:id="@+id/sign_in_login"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/editText_height"
                     android:layout_marginBottom="20dp"
@@ -85,7 +84,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/textSize_300" />
 
-                <EditText
+                <EditText android:id="@+id/sign_in_password"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/editText_height"
                     android:autofillHints="password"
@@ -96,7 +95,7 @@
                     android:paddingBottom="@dimen/editText_paddingBottom"
                     android:textSize="@dimen/textSize_200" />
 
-                <TextView
+                <TextView android:id="@+id/sign_in_forgotten_pwd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -105,12 +104,12 @@
                     android:textColor="@color/blue_500"
                     android:textSize="@dimen/textSize_200" />
 
-                <Button
+                <Button android:id="@+id/sign_in_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_primary_bg"
-                    android:text="@string/signin"
+                    android:text="@string/sign_in"
                     android:textAllCaps="false" />
 
                 <LinearLayout
@@ -127,10 +126,10 @@
                         android:textColor="@color/grey_300"
                         android:textSize="@dimen/textSize_200" />
 
-                    <TextView
+                    <TextView android:id="@+id/sign_up_link"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/signin"
+                        android:text="@string/sign_up"
                         android:textColor="@color/blue_400"
                         android:textSize="@dimen/textSize_200" />
 
@@ -140,7 +139,7 @@
             </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:text="@string/copyright"
             android:layout_gravity="center"
             android:gravity="center"
