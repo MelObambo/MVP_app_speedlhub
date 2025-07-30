@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="70dp"
-    android:background="@color/blue_100">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    tools:context=".ui.dashboard.DashboardFragment">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".ui.sign.SignUpFragment">
+        android:layout_height="match_parent"
+        android:paddingTop="70dp"
+        android:background="@color/blue_100">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -174,12 +174,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:text="@string/dashboard_customer_info_label"
-                        android:layout_toEndOf="@id/dashboard_customer_info_icon" />
+                        android:layout_toEndOf="@id/dashboard_customer_info_icon"/>
 
                     <TextView android:id="@+id/dashboard_customer_textview"
                         style="@style/textViewDashboardSearchStyle"
                         android:layout_toEndOf="@id/dashboard_customer_info_icon"
-                        android:layout_below="@+id/dashboard_customer_info_label" />
+                        android:layout_below="@+id/dashboard_customer_info_label"/>
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -188,6 +188,18 @@
                     android:background="@drawable/bg_db_card"
                     android:layout_marginBottom="35dp">
 
+                    <FrameLayout android:id="@+id/dashboard_delay_info_icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:foreground="@drawable/ic_baggage"
+                        android:layout_margin="25dp"/>
+
+                    <TextView android:id="@+id/dashboard_delay_info_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/dashboard_delay_info_label"
+                        android:layout_toEndOf="@id/dashboard_delay_info_icon" />
 
                     <TextView android:id="@+id/dashboard_delay_textview"
                         style="@style/textViewDashboardSearchStyle"
@@ -319,26 +331,8 @@
                     android:layout_toEndOf="@id/dashboard_pending_invoicing_info_icon"
                     android:layout_below="@+id/dashboard_pending_invoicing_info_label" />
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="@dimen/card_vertical_padding"
-                android:background="@drawable/bg_db_card"
-                android:layout_marginBottom="35dp">
 
-            <FrameLayout android:id="@+id/dashboard_delay_info_icon"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:foreground="@drawable/ic_baggage"
-                android:layout_margin="25dp"/>
 
-            <TextView android:id="@+id/dashboard_delay_info_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="@string/dashboard_delay_info_label"
-                android:layout_toEndOf="@id/dashboard_delay_info_icon" />
-            </RelativeLayout>
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

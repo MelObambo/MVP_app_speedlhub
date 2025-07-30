@@ -2,7 +2,7 @@
 <resources>
     <string name="menu_invoice">Facturation</string>
     <string name="action_sign_out">Déconnexion</string>
-    <string name="sign_in">Se connecter</string>
+    <string name="sign_in_text">Se connecter</string>
     <string name="sign_in_title">Envoyer vos colis en ligne</string>
     <string name="sign_in_message">Votre partenaire colis</string>
     <string name="sign_up_link_text">Vous n\'avez pas encore de compte ?</string>
@@ -57,4 +57,6 @@
     <string name="address">Adresse</string>
     <string name="previous_page">Précédent</string>
     <string name="next_page">Suivant</string>
+    <string name="individual">Particulier</string>
+    <string name="professional">Professionnel</string>
 </resources>

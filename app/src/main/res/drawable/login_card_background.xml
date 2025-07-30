@@ -19,7 +19,7 @@
 
     <item android:drawable="@drawable/logo"
         android:height="350dp"
-        android:width="325dp"
+        android:width="350dp"
         android:top="-80dp"
         android:left="20dp"/>
 

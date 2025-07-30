@@ -3,45 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/sign_in">
-
-    <fragment
-        android:id="@+id/sign_up"
-        android:name="com.example.myapplication.ui.sign.SignUpFragment"
-        android:label="@string/menu_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
+    app:startDestination="@id/sign_in">
     <fragment
         android:id="@+id/sign_in"
         android:name="com.example.myapplication.ui.sign.SignInFragment"
         android:label="@string/menu_sign_in"
-        tools:layout="@layout/fragment_sign_in" />
+        tools:layout="@layout/fragment_sign_in"/>
+
+    <fragment
+        android:id="@+id/sign_up"
+        android:name="com.example.myapplication.ui.sign.SignInFragment"
+        android:label="@string/menu_sign_up"
+        tools:layout="@layout/fragment_sign_up"/>
+
     <fragment
         android:id="@+id/menu_dashboard"
         android:name="com.example.myapplication.ui.dashboard.DashboardFragment"
         android:label="@string/menu_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard"/>
 
     <fragment
         android:id="@+id/menu_address"
         android:name="com.example.myapplication.ui.address.AddressFragment"
         android:label="@string/menu_address"
-        tools:layout="@layout/fragment_address" />
+        tools:layout="@layout/fragment_address"/>
 
     <fragment
         android:id="@+id/menu_tracking"
         android:name="com.example.myapplication.ui.shipment.TrackingFragment"
         android:label="@string/menu_tracking"
-        tools:layout="@layout/fragment_tracking" />
+        tools:layout="@layout/fragment_tracking"/>
 
     <fragment
         android:id="@+id/menu_history"
         android:name="com.example.myapplication.ui.shipment.HistoryFragment"
         android:label="@string/menu_history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history"/>
 
     <fragment
         android:id="@+id/menu_invoice"
         android:name="com.example.myapplication.ui.invoice.InvoiceFragment"
         android:label="@string/menu_invoice"
-        tools:layout="@layout/fragment_invoice" />
+        tools:layout="@layout/fragment_invoice"/>
 </navigation>

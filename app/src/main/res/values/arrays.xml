@@ -21,4 +21,8 @@
         <item>Multi package</item>
         <item>\> 30kg</item>
     </string-array>
+    <string-array name="user_type">
+        <item>@string/individual</item>
+        <item>@string/professional</item>
+    </string-array>
 </resources>

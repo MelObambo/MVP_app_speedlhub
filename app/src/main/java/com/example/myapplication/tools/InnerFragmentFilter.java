@@ -1,4 +1,4 @@
-package com.example.myapplication.object;
+package com.example.myapplication.tools;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,11 +8,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TableLayout;
 
 import com.example.myapplication.R;
-
-import java.time.LocalDate;
 
 public class InnerFragmentFilter extends LinearLayout {
     private EditText datePrimary, dateSecondary, orderNumber, trackingNumber, name, ref;

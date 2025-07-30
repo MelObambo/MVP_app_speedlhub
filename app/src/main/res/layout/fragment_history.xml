@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/blue_100"
-    android:paddingHorizontal="@dimen/activity_horizontal_padding"
-    android:paddingTop="30dp">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_height="wrap_content"
+    tools:context="ui.shipment.HistoryFragment">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent"
+        android:background="@color/blue_100"
+        android:paddingHorizontal="@dimen/activity_horizontal_padding"
+        android:paddingTop="30dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,17 +25,17 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="15dp"
                 android:paddingVertical="10dp">
-                <TextView android:id="@+id/tracking_total_number"
+                <TextView android:id="@+id/history_total_number"
                     android:text="35"
                     style="@style/trackingNumberTextView" />
-                <TextView android:id="@+id/tracking_info_all"
+                <TextView android:id="@+id/history_info_all"
                     android:text="@string/tracking_info_all"
-                    android:layout_toEndOf="@id/tracking_total_number"
+                    android:layout_toEndOf="@id/history_total_number"
                     style="@style/trackingInfoPeriodTextView" />
                 <TextView
                     android:text="@string/tracking_info_text"
-                    android:layout_toEndOf="@id/tracking_total_number"
-                    android:layout_below="@id/tracking_info_all"
+                    android:layout_toEndOf="@id/history_total_number"
+                    android:layout_below="@id/history_info_all"
                     style="@style/trackingInfoTextView"/>
             </RelativeLayout>
             <RelativeLayout
@@ -42,17 +43,17 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_db_card"
                 android:paddingVertical="10dp">
-                <TextView android:id="@+id/tracking_day_number"
+                <TextView android:id="@+id/history_day_number"
                     android:text="0"
                     style="@style/trackingNumberTextView"/>
-                <TextView android:id="@+id/tracking_info_day"
+                <TextView android:id="@+id/history_info_day"
                     android:text="@string/tracking_info_day"
-                    android:layout_toEndOf="@id/tracking_day_number"
+                    android:layout_toEndOf="@id/history_day_number"
                     style="@style/trackingInfoPeriodTextView" />
                 <TextView
                     android:text="@string/tracking_info_text"
-                    android:layout_toEndOf="@id/tracking_day_number"
-                    android:layout_below="@id/tracking_info_day"
+                    android:layout_toEndOf="@id/history_day_number"
+                    android:layout_below="@id/history_info_day"
                     style="@style/trackingInfoTextView"/>
             </RelativeLayout>
             <RelativeLayout
@@ -61,17 +62,17 @@
                 android:background="@drawable/bg_db_card"
                 android:layout_marginVertical="@dimen/activity_vertical_margin"
                 android:paddingVertical="10dp">
-                <TextView android:id="@+id/tracking_week_number"
+                <TextView android:id="@+id/history_week_number"
                     android:text="20"
                     style="@style/trackingNumberTextView" />
-                <TextView android:id="@+id/tracking_info_week"
+                <TextView android:id="@+id/history_info_week"
                     android:text="@string/tracking_info_week"
-                    android:layout_toEndOf="@id/tracking_week_number"
+                    android:layout_toEndOf="@id/history_week_number"
                     style="@style/trackingInfoPeriodTextView" />
                 <TextView
                     android:text="@string/tracking_info_text"
-                    android:layout_toEndOf="@id/tracking_week_number"
-                    android:layout_below="@id/tracking_info_week"
+                    android:layout_toEndOf="@id/history_week_number"
+                    android:layout_below="@id/history_info_week"
                     style="@style/trackingInfoTextView"/>
             </RelativeLayout>
             <RelativeLayout
@@ -79,17 +80,17 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_db_card"
                 android:paddingVertical="10dp">
-                <TextView android:id="@+id/tracking_month_number"
+                <TextView android:id="@+id/history_month_number"
                     android:text="20"
                     style="@style/trackingNumberTextView" />
-                <TextView android:id="@+id/tracking_info_month"
+                <TextView android:id="@+id/history_info_month"
                     android:text="@string/tracking_info_month"
-                    android:layout_toEndOf="@id/tracking_month_number"
+                    android:layout_toEndOf="@id/history_month_number"
                     style="@style/trackingInfoPeriodTextView" />
                 <TextView
                     android:text="@string/tracking_info_text"
-                    android:layout_toEndOf="@id/tracking_month_number"
-                    android:layout_below="@id/tracking_info_month"
+                    android:layout_toEndOf="@id/history_month_number"
+                    android:layout_below="@id/history_info_month"
                     style="@style/trackingInfoTextView"/>
             </RelativeLayout>
 
@@ -108,7 +109,7 @@
                     android:layout_marginBottom="25dp"
                     style="@style/subtitleTextViewStyle"/>
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/trackingFilter"
+                    android:id="@+id/historyFilter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:iconGravity="textStart"
@@ -119,7 +120,8 @@
                     android:textSize="@dimen/textSize_300"/>
                 <LinearLayout android:id="@+id/parent_filter"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"/>
             </LinearLayout>
             <LinearLayout android:id="@+id/table"
                 android:layout_width="match_parent"
@@ -260,5 +262,5 @@
                 </TableLayout>
             </LinearLayout>
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

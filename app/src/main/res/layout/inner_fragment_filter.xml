@@ -45,29 +45,23 @@
                 android:inputType="text"/>
 
             <Spinner android:id="@+id/transportation"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:entries="@array/transportation"
+                style="@style/spinnerStyle"
+                android:theme="@style/spinnerStyle.Theme"
                 android:prompt="@string/tracking_hint_transportation"
-                android:theme="@style/spinnerStyle.Theme"/>
+                android:entries="@array/transportation"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp">
             <Spinner android:id="@+id/country"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                style="@style/spinnerStyle"
                 android:theme="@style/spinnerStyle.Theme"
                 android:prompt="@string/tracking_hint_country"
                 android:entries="@array/country"
                 android:layout_marginEnd="10dp"/>
             <Spinner android:id="@+id/status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                style="@style/spinnerStyle"
                 android:theme="@style/spinnerStyle.Theme"
                 android:prompt="@string/tracking_hint_status"
                 android:entries="@array/status"/>
@@ -85,9 +79,7 @@
                 style="@style/editTextStyle"
                 android:inputType="text"/>
             <Spinner android:id="@+id/type"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
+                style="@style/spinnerStyle"
                 android:theme="@style/spinnerStyle.Theme"
                 android:prompt="@string/tracking_hint_type"
                 android:entries="@array/type"/>

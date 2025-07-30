@@ -1,61 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="70dp"
-    android:background="@color/blue_100">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    tools:context=".ui.address.AddressFragment">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".ui.sign.SignUpFragment">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:orientation="vertical"
-        android:paddingHorizontal="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_height="match_parent"
+        android:paddingTop="70dp"
+        android:background="@color/blue_100">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
             <TextView
                 android:text="@string/address_header"
                 style="@style/subtitleTextViewStyle"/>
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_edit_text_border"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:drawableStart="@drawable/ic_edit_text_search"/>
+                android:orientation="horizontal">
+
+                <EditText android:id="@+id/address_search"
+                    style="@style/editTextStyle"
+                    android:layout_marginEnd="10dp"
+                    android:drawableStart="@drawable/ic_edit_text_search"
+                    android:inputType="text"
+                    android:hint="@string/action_search"/>
+                <EditText android:id="@+id/address_period"
+                    style="@style/editTextStyle"
+                    android:inputType="date"
+                    android:hint="@string/address_period"
+                    tools:ignore="AutoFill"/>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="3dp"
                 android:orientation="horizontal" >
 
-                <EditText
-                    style="@style/editTextStyle"
-                    android:layout_width="70dp"
-                    android:hint="@string/address_period"
-                    android:inputType="date" />
-                <Spinner
-                    android:layout_height="40dp"
-                    android:layout_width="wrap_content"
+                <Spinner android:id="@+id/address_type"
+                    style="@style/spinnerStyle"
+                    android:layout_marginEnd="10dp"
+                    android:entries="@array/type"
+                    android:prompt="@string/address_type"
+                    android:theme="@style/spinnerStyle.Theme"/>
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/bg_edit_text_border"/>
+                    app:iconGravity="textStart"
+                    app:icon="@drawable/ic_filter"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/address_filter"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/textSize_300"/>
             </LinearLayout>
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:iconGravity="textStart"
-                app:icon="@drawable/ic_filter"
-                android:layout_marginBottom="20dp"
-                android:text="@string/address_filter"
-                android:textAlignment="center"
-                android:textSize="@dimen/textSize_300"/>
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -64,115 +72,67 @@
                 android:background="@drawable/bg_address_table">
                 <TableRow style="@style/tableRowStyle">
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address_type"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"/>
+                        android:text="@string/address_type"/>
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="Particulier"
-                        android:paddingStart="5dp"/>
+                        android:text="Particulier"/>
                 </TableRow>
                 <TableRow style="@style/tableRowStyle">
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address_corporate_name"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp" />
+                        android:text="@string/address_corporate_name"/>
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="SpeedleHub"
-                        android:paddingStart="5dp"/>
+                        android:text="SpeedleHub"/>
                 </TableRow>
                 <TableRow style="@style/tableRowStyle">
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address_name"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"/>
+                        android:text="@string/address_name"/>
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="Example Two"
-                        android:paddingStart="5dp"/>
+                        android:text="Example Two"/>
                 </TableRow>
                 <TableRow style="@style/tableRowStyle">
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address_email"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"/>
+                        android:text="@string/address_email"/>
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="example2@speedlehub.com"
-                        android:paddingStart="5dp" />
+                        android:text="example2@speedlehub.com"/>
                 </TableRow>
                 <TableRow style="@style/tableRowStyle">
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address_phone"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"/>
+                        android:text="@string/address_phone"/>
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="01 02 03 04 05"
-                        android:paddingStart="5dp"/>
+                        android:text="01 02 03 04 05"/>
                 </TableRow>
                 <TableRow style="@style/tableRowStyle">
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"/>
+                        android:text="@string/address"/>
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="5 rue du Parc, le Blanc Mesnil"
-                        android:paddingStart="5dp"/>
+                        android:text="5 rue du Parc, le Blanc Mesnil"/>
                 </TableRow>
             </TableLayout>
 
@@ -183,122 +143,76 @@
                 android:background="@drawable/bg_address_table">
                 <TableRow style="@style/tableRowStyle">
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"
-                        android:text="@string/address_type"
-                        android:textAlignment="textEnd"
-                        android:textStyle="italic" />
+                        android:text="@string/address_type" />
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="Particulier"
-                        android:paddingStart="5dp"/>
+                        android:text="Particulier"/>
                 </TableRow>
                 <TableRow style="@style/tableRowStyle">
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address_corporate_name"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"/>
+                        android:text="@string/address_corporate_name"/>
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="SpeedleHub"
-                        android:paddingStart="5dp"/>
+                        android:text="SpeedleHub"/>
                 </TableRow>
                 <TableRow style="@style/tableRowStyle">
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address_name"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"/>
+                        android:text="@string/address_name"/>
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="Example Two"
-                        android:paddingStart="5dp"/>
+                        android:text="Example Two"/>
                 </TableRow>
                 <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address_email"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"/>
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="example2@speedlehub.com"
-                        android:paddingStart="5dp" />
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address_phone"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"/>
+                        android:text="@string/address_email"/>
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="01 02 03 04 05"
-                        android:paddingStart="5dp"/>
+                        android:text="example2@speedlehub.com"/>
                 </TableRow>
                 <TableRow style="@style/tableRowStyle">
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle.Header"
                         android:layout_weight=".6"
-                        android:textStyle="italic"
-                        android:text="@string/address"
-                        android:textAlignment="textEnd"
-                        android:background="@drawable/bg_address_table_column"
-                        android:paddingEnd="5dp"/>
+                        android:text="@string/address_phone"/>
+
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        style="@style/tableTextViewStyle"
                         android:layout_weight="1.3"
-                        android:textStyle="bold"
-                        android:text="5 rue du Parc, le Blanc Mesnil"
-                        android:paddingStart="5dp"/>
+                        android:text="01 02 03 04 05"/>
+                </TableRow>
+                <TableRow style="@style/tableRowStyle">
+                    <TextView
+                        style="@style/tableTextViewStyle.Header"
+                        android:layout_weight=".6"
+                        android:text="@string/address"/>
+                    <TextView
+                        style="@style/tableTextViewStyle"
+                        android:layout_weight="1.3"
+                        android:text="5 rue du Parc, le Blanc Mesnil"/>
                 </TableRow>
             </TableLayout>
 
-            <LinearLayout
+             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                 android:layout_marginBottom="70dp">
                 <Button
                     android:id="@+id/page_1_previous"
                     android:layout_width="0dp"
@@ -329,5 +243,5 @@
                     android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

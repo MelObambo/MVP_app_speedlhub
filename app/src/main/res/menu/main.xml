@@ -43,7 +43,7 @@
                     <item
                         android:id="@+id/action_french"
                         android:orderInCategory="213"
-                        android:icon="@drawable/ic_french_flag"
+                        android:icon="@drawable/ic_flag_french"
                         android:title="@string/action_french"
                         app:showAsAction="never" />
                 </menu>

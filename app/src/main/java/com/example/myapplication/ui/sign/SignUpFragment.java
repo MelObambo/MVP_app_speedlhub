@@ -47,7 +47,10 @@ public class SignUpFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        fab = (FloatingActionButton) requireActivity().findViewById(R.id.fab);
+        AppCompatActivity activity = (AppCompatActivity) requireActivity();
+        if (activity.getSupportActionBar() != null)
+            activity.getSupportActionBar().hide();
+        fab = requireActivity().findViewById(R.id.fab);
         if(fab != null)
             fab.setVisibility(View.GONE);
 
@@ -111,7 +114,6 @@ public class SignUpFragment extends Fragment {
         AppCompatActivity activity = (AppCompatActivity) requireActivity();
         if (activity.getSupportActionBar() != null)
             activity.getSupportActionBar().show();
-
         if(fab != null)
             fab.setVisibility(View.VISIBLE);
         binding = null;

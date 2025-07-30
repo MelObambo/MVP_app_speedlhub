@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.myapplication.databinding.FragmentHistoryBinding;
-import com.example.myapplication.object.InnerFragmentFilter;
+import com.example.myapplication.tools.InnerFragmentFilter;
 
 public class HistoryFragment extends Fragment {
 
@@ -33,7 +33,7 @@ public class HistoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        this.filterButton = binding.trackingFilter;
+        this.filterButton = binding.historyFilter;
         filterButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

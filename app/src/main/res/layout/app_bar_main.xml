@@ -32,6 +32,7 @@
         android:backgroundTint="@color/blue_400"
         app:backgroundTint="@color/white"
         app:iconTint="@color/white"
-        app:srcCompat="@drawable/ic_notification" />
+        app:srcCompat="@drawable/ic_notification"
+        android:contentDescription="@string/action_notification"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
