@@ -1,6 +1,5 @@
 package com.example.myapplication.ui.sign;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +18,6 @@ import androidx.navigation.Navigation;
 
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentSignInBinding;
-import com.example.myapplication.ui.dashboard.DashboardFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class SignInFragment extends Fragment {
@@ -46,7 +44,7 @@ public class SignInFragment extends Fragment {
         if (activity.getSupportActionBar() != null)
             activity.getSupportActionBar().hide();
 
-        fab = (FloatingActionButton) requireActivity().findViewById(R.id.fab);
+        fab = requireActivity().findViewById(R.id.fab);
         if(fab != null)
             fab.setVisibility(View.GONE);
         login = binding.signInLogin;
@@ -61,17 +59,17 @@ public class SignInFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                if(signInViewModel.signIn(login.getText().toString(), password.getText().toString()) != null) {
+                //if(signInViewModel.onSignIn(login.getText().toString(), password.getText().toString()) != null) {
                     NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
                     navController.navigate(R.id.menu_dashboard);
-                }
+                //}
             }
         });
         forgotten_pwd.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                /*NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
-                navController.navigate(R.id.recover_password);*/
+                //NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
+                //navController.navigate(R.id.recover_password);
                 }
         });
         sign_up.setOnClickListener(new View.OnClickListener(){
@@ -81,6 +79,7 @@ public class SignInFragment extends Fragment {
                 navController.navigate(R.id.sign_up);
                 }
         });
+
     }
 
     @Override
