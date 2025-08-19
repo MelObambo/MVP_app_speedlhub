@@ -2,10 +2,9 @@ package com.example.myapplication.tools;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -24,8 +23,8 @@ public class JSONParser {
     HttpURLConnection connection;
     DataOutputStream wr;
     StringBuilder result;
-    URL urlObj;
-    JSONObject jObj = null;
+    URL urlArray;
+    JSONArray jObj = null;
     StringBuilder urlParams;
     StringBuilder bodyParams;
     String paramsString;
@@ -39,9 +38,8 @@ public class JSONParser {
         }
         return null;
     }
-
-    public JSONObject makeHttpRequest(String url, String apiKey, String urlParam,
-                                      HashMap<String, String> hmUrlParams, HashMap<String, String> hmBodyParams) {
+//String apikey, , HashMap<String, String> hmBodyParams
+    public JSONArray makeHttpRequest(String url, String urlParam, HashMap<String, String> hmUrlParams) {
 
         urlParams = new StringBuilder();
         int i = 0;
@@ -80,8 +78,8 @@ public class JSONParser {
             url += "?" + urlParams.toString();
         }
         try {
-            urlObj = new URL(url);
-            connection = (HttpURLConnection) urlObj.openConnection();
+            urlArray = new URL(url);
+            connection = (HttpURLConnection) urlArray.openConnection();
             connection.setDoOutput(false);
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Content-type", "application/json");
@@ -99,26 +97,42 @@ public class JSONParser {
             e.fillInStackTrace();
         }
         try {
-            InputStream in = new BufferedInputStream(connection.getInputStream());
-            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-            result = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                result.append(line);
+            InputStream inputStream;
+
+            int responseCode = connection.getResponseCode();
+            if (responseCode >= 200 && responseCode < 400) {
+                inputStream = connection.getInputStream();
+            } else {
+                // Read error response
+                inputStream = connection.getErrorStream();
             }
-            // help to debug
-            Log.d("JSON Parser", "result: " + result.toString());
+
+            if (inputStream != null) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+                result = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    result.append(line);
+                }
+                Log.d("JSON Parser", "result: " + result.toString());
+            } else {
+                Log.e("JSON Parser", "Input stream is null");
+            }
+
         } catch (IOException e) {
-            e.fillInStackTrace();
+            Log.e("JSON Parser", "IOException: " + e.getMessage());
         }
         connection.disconnect();
 
         try {
-            jObj = new JSONObject(result.toString());
+            if (result != null) {
+                jObj = new JSONArray(result.toString());
+            } else {
+                Log.e("JSON Parser", "Result is null – possible connection or stream error");
+            }
         } catch (JSONException e) {
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
+            Log.e("JSON Parser", "Error parsing data: " + e.toString());
         }
-
         return jObj;
     }
 }

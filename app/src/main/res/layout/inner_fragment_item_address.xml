@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/bg_address_table"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TableRow style="@style/tableRowStyle">
+            <TextView
+                style="@style/tableTextViewStyle.Header"
+                android:layout_weight=".6"
+                android:text="@string/address_name"/>
+            <TextView android:id="@+id/name_edit_text"
+                style="@style/tableTextViewStyle"
+                android:layout_weight="1.3"/>
+        </TableRow>
+        <TableRow style="@style/tableRowStyle">
+            <TextView
+                style="@style/tableTextViewStyle.Header"
+                android:layout_weight=".6"
+                android:text="@string/address_type"/>
+            <TextView android:id="@+id/type_edit_text"
+                style="@style/tableTextViewStyle"
+                android:layout_weight="1.3"/>
+        </TableRow>
+        <TableRow style="@style/tableRowStyle">
+            <TextView
+                style="@style/tableTextViewStyle.Header"
+                android:layout_weight=".6"
+                android:text="@string/address_corporate_name"/>
+
+            <TextView android:id="@+id/corporate_name_edit_text"
+                style="@style/tableTextViewStyle"
+                android:layout_weight="1.3"/>
+        </TableRow>
+        <TableRow style="@style/tableRowStyle">
+            <TextView
+                style="@style/tableTextViewStyle.Header"
+                android:layout_weight=".6"
+                android:text="@string/address_email"/>
+
+            <TextView android:id="@+id/mail_edit_text"
+                style="@style/tableTextViewStyle"
+                android:layout_weight="1.3"/>
+        </TableRow>
+        <TableRow style="@style/tableRowStyle">
+            <TextView
+                style="@style/tableTextViewStyle.Header"
+                android:layout_weight=".6"
+                android:text="@string/address_phone"/>
+
+            <TextView android:id="@+id/phone_edit_text"
+                style="@style/tableTextViewStyle"
+                android:layout_weight="1.3"/>
+        </TableRow>
+        <TableRow style="@style/tableRowStyle">
+            <TextView
+                style="@style/tableTextViewStyle.Header"
+                android:layout_weight=".6"
+                android:text="@string/address_country"/>
+            <TextView android:id="@+id/country_edit_text"
+                style="@style/tableTextViewStyle"
+                android:layout_weight="1.3"/>
+        </TableRow>
+        <TableRow style="@style/tableRowStyle">
+            <TextView
+                style="@style/tableTextViewStyle.Header"
+                android:layout_weight=".6"
+                android:text="@string/address_post_code"/>
+            <TextView android:id="@+id/post_code_edit_text"
+                style="@style/tableTextViewStyle"
+                android:layout_weight="1.3"/>
+        </TableRow>
+        <TableRow style="@style/tableRowStyle">
+            <TextView
+                style="@style/tableTextViewStyle.Header"
+                android:layout_weight=".6"
+                android:text="@string/address_city"/>
+            <TextView android:id="@+id/city_edit_text"
+                style="@style/tableTextViewStyle"
+                android:layout_weight="1.3"/>
+        </TableRow>
+        <TableRow style="@style/tableRowStyle">
+            <TextView
+                style="@style/tableTextViewStyle.Header"
+                android:layout_weight=".6"
+                android:text="@string/address_street"/>
+            <TextView android:id="@+id/street_edit_text"
+                style="@style/tableTextViewStyle"
+                android:layout_weight="1.3"/>
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

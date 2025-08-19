@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.myapplication.databinding.FragmentHistoryBinding;
-import com.example.myapplication.tools.InnerFragmentFilter;
+import com.example.myapplication.tools.FilterAdapter;
 
 public class HistoryFragment extends Fragment {
 
@@ -38,7 +38,11 @@ public class HistoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 LinearLayout parent = binding.parentFilter;
-                parent.addView(new InnerFragmentFilter(getContext(), null));
+                View childFilter = new FilterAdapter(getContext(), null);
+                if (parent.getChildCount() == 0 )
+                    parent.addView(childFilter);
+                else
+                    parent.removeAllViews();
             }
         });
     }

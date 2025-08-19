@@ -43,9 +43,6 @@ public class SignInFragment extends Fragment {
                 new ViewModelProvider(this).get(SignInViewModel.class);
         binding = FragmentSignInBinding.inflate(inflater, container, false);
 
-        SharedPreferences sharedPreferences = getContext().getSharedPreferences("flag_drawable", Context.MODE_PRIVATE);
-        int flag = sharedPreferences.getInt("flag_drawable", R.drawable.ic_flag_french);
-        language_button.setBackground(AppCompatResources.getDrawable(getContext(), flag));
 
         return binding.getRoot();
     }
@@ -67,6 +64,13 @@ public class SignInFragment extends Fragment {
         sign_up = binding.signUpLink;
         button = binding.signInButton;
         language_button = binding.signInLanguageButton;
+
+        if (getActivity().getPreferences(Context.MODE_PRIVATE) != null) {
+            SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+            int defaultDrawable = R.drawable.ic_flag_french;
+            int defaultValue = sharedPreferences.getInt("flag_drawable", defaultDrawable);
+            language_button.setBackground(AppCompatResources.getDrawable(getActivity(), defaultValue));
+        }
 
         SignInViewModel signInViewModel =
                 new ViewModelProvider(this).get(SignInViewModel.class);
@@ -92,27 +96,30 @@ public class SignInFragment extends Fragment {
                 Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main).navigate(R.id.sign_up);
             }
         });
+        //TODO: erase the depreciated method getDefaultSharedPreferences()
         language_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (getActivity() != null && getContext() != null) {
                     Locale currentLang = getResources().getConfiguration().getLocales().get(0);
                     LanguageManager languageManager = new LanguageManager(getContext());
-                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+                    SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
                     if (currentLang.toLanguageTag().equals("en-GB")) {
                         languageManager.updateResources("fr_FR");
-                        prefs.edit().putInt("flag_drawable", R.drawable.ic_flag_chinese).apply();
+                        editor.putInt("flag_drawable", R.drawable.ic_flag_chinese).apply();
                         recreate(getActivity());
                     } else if (currentLang.toLanguageTag().equals("fr-FR")) {
                         languageManager.updateResources("zh_ZH");
-                        prefs.edit().putInt("flag_drawable", R.drawable.ic_flag_uk).apply();
+                        editor.putInt("flag_drawable", R.drawable.ic_flag_uk).apply();
                         recreate(getActivity());
                     }
                     else {
                         languageManager.updateResources("en_US");
-                        prefs.edit().putInt("flag_drawable", R.drawable.ic_flag_french).apply();
+                        editor.putInt("flag_drawable", R.drawable.ic_flag_french).apply();
                         recreate(getActivity());
                     }
+                    editor.apply();
                 }
             }
         });

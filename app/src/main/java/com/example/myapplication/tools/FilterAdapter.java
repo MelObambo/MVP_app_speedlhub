@@ -11,7 +11,7 @@ import android.widget.Spinner;
 
 import com.example.myapplication.R;
 
-public class InnerFragmentFilter extends LinearLayout {
+public class FilterAdapter extends LinearLayout {
     private EditText datePrimary, dateSecondary, orderNumber, trackingNumber, name, ref;
     private Spinner transportation, country, status, type;
 
@@ -38,7 +38,7 @@ public class InnerFragmentFilter extends LinearLayout {
 
         }*/
     }
-    public InnerFragmentFilter(Context context, AttributeSet attributeSet) {
+    public FilterAdapter(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         LayoutInflater.from(context).inflate(R.layout.inner_fragment_filter, this, true);
 

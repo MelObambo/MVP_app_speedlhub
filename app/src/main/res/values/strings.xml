@@ -85,14 +85,18 @@
     <string name="address_period">Select the period</string>
     <string name="date_picker">Date picker</string>
 
+    <string name="address">Address</string>
     <string name="address_type">Type</string>
+    <string name="individual">Individual</string>
+    <string name="professional">Professional</string>
     <string name="address_corporate_name">Corporate name</string>
     <string name="address_name">Name Surname</string>
     <string name="address_email">Email</string>
     <string name="address_phone">Phone</string>
-    <string name="address">Address</string>
-    <string name="individual">Individual</string>
-    <string name="professional">Professional</string>
+    <string name="address_country">Country</string>
+    <string name="address_post_code">Post code</string>
+    <string name="address_city">City</string>
+    <string name="address_street">Street</string>
     <string name="page" translatable="false">1</string>
 
     <string name="previous_page">Previous</string>

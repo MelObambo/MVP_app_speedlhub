@@ -54,159 +54,27 @@
                     android:prompt="@string/address_type"
                     android:theme="@style/spinnerStyle.Theme"/>
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/address_filter_button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:iconGravity="textStart"
-                    app:icon="@drawable/ic_filter"
                     android:layout_marginBottom="20dp"
                     android:text="@string/address_filter"
                     android:textAlignment="center"
-                    android:textSize="@dimen/textSize_300"/>
+                    android:textSize="@dimen/textSize_300"
+                    app:iconGravity="textStart"
+                    app:icon="@drawable/ic_filter"/>
             </LinearLayout>
 
-            <TableLayout
+            <LinearLayout android:id="@+id/address_table_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
-                android:background="@drawable/bg_address_table">
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address_type"/>
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="Particulier"/>
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address_corporate_name"/>
-
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="SpeedleHub"/>
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address_name"/>
-
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="Example Two"/>
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address_email"/>
-
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="example2@speedlehub.com"/>
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address_phone"/>
-
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="01 02 03 04 05"/>
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address"/>
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="5 rue du Parc, le Blanc Mesnil"/>
-                </TableRow>
-            </TableLayout>
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
-                android:background="@drawable/bg_address_table">
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address_type" />
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="Particulier"/>
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address_corporate_name"/>
-
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="SpeedleHub"/>
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address_name"/>
-
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="Example Two"/>
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address_email"/>
-
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="example2@speedlehub.com"/>
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address_phone"/>
-
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="01 02 03 04 05"/>
-                </TableRow>
-                <TableRow style="@style/tableRowStyle">
-                    <TextView
-                        style="@style/tableTextViewStyle.Header"
-                        android:layout_weight=".6"
-                        android:text="@string/address"/>
-                    <TextView
-                        style="@style/tableTextViewStyle"
-                        android:layout_weight="1.3"
-                        android:text="5 rue du Parc, le Blanc Mesnil"/>
-                </TableRow>
-            </TableLayout>
+                android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/address_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
 
              <LinearLayout
                 android:layout_width="match_parent"
@@ -214,7 +82,7 @@
                 android:orientation="horizontal"
                  android:layout_marginBottom="70dp">
                 <Button
-                    android:id="@+id/page_1_previous"
+                    android:id="@+id/address_previous_page"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -222,7 +90,7 @@
                     android:text="@string/previous_page"
                     android:textColor="@color/white" />
 
-                <TextView
+                <TextView android:id="@+id/page_number"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:paddingHorizontal="15dp"
@@ -234,7 +102,7 @@
                     android:hint=""
                     android:layout_marginHorizontal="10dp"/>
 
-                <Button android:id="@+id/page_2_previous"
+                <Button android:id="@+id/address_next_page"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1.2"

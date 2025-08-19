@@ -7,13 +7,23 @@ public class OrderModel {
     private final InvoiceModel invoiceModel;
     private final AddressModel addressModel;
 
-    public int getId() { return id; }
-    public String getCarrier() { return carrier; }
-    public PackageModel getPackageModel() { return packageModel; }
+    public int getId() {
+        return id;
+    }
+    public String getCarrier() {
+        return carrier;
+    }
+    public PackageModel getPackageModel() {
+        return packageModel;
+    }
 
-    public InvoiceModel getInvoiceModel() { return invoiceModel; }
+    public InvoiceModel getInvoiceModel() {
+        return invoiceModel;
+    }
 
-    public AddressModel getAddressModel() { return addressModel; }
+    public AddressModel getAddressModel() {
+        return addressModel;
+    }
 
     public OrderModel(int id, String carrier, PackageModel packageModel, InvoiceModel invoiceModel, AddressModel addressModel){
         this.id = id;
